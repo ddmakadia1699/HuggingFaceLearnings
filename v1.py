@@ -38,7 +38,11 @@ from transformers import pipeline
 #     question="where do i work?",
 #     context="My name is Sylvain and I work at Hugging Face in Brooklyn."))
 
-classifier = pipeline('summarization')
+# classifier = pipeline('summarization')
+# print('-----------------')
+# print(classifier("""
+#     My name is Sylvain and I work at Hugging Face in Brooklyn."""))
+
+classifier = pipeline('translation',model='Helsinki-NLP/opus-mt-fr-en')
 print('-----------------')
-print(classifier("""
-    My name is Sylvain and I work at Hugging Face in Brooklyn."""))
+print(classifier("Ce cours est produit par Hugging Face."))
